@@ -1,0 +1,65 @@
+public class Solution {
+public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+ListNode p1 = headA;
+ListNode p2 = headB;
+
+while (p1 != p2) {
+
+if (p1 == null) {
+p1 = headB;
+} else {
+p1 = p1.next;
+}
+
+if (p2 == null) {
+p2 = headA;
+} else {
+p2 = p2.next;
+}
+}
+
+return p1;
+}
+}
+
+
+
+
+Case 1
+
+Input
+intersectVal =
+8
+listA =
+[4,1,8,4,5]
+listB =
+[5,6,1,8,4,5]
+skipA =
+2
+skipB =
+3
+Output
+Intersected at '8'
+Expected
+Intersected at '8'
+
+
+Case 2
+
+
+Input
+intersectVal =
+2
+listA =
+[1,9,1,2,4]
+listB =
+[3,2,4]
+skipA =
+3
+skipB =
+1
+Output
+Intersected at '2'
+Expected
+Intersected at '2'
