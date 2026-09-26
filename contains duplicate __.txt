@@ -1,0 +1,57 @@
+class Solution {
+public boolean containsNearbyDuplicate(int[] nums, int k) {
+HashMap<Integer, Integer> map = new HashMap<>();
+
+for (int i = 0; i < nums.length; i++) {
+
+if (map.containsKey(nums[i])) {
+int previousIndex = map.get(nums[i]);
+
+if (i - previousIndex <= k) {
+return true;
+}
+}
+
+map.put(nums[i], i);
+}
+
+return false;
+}
+}
+
+
+
+
+
+
+output:
+
+
+case1:
+
+
+Input
+nums =
+[1,2,3,1]
+k =
+3
+Output
+true
+Expected
+true
+
+
+
+
+case2:
+
+
+Input
+nums =
+[1,0,1,1]
+k =
+1
+Output
+true
+Expected
+true
